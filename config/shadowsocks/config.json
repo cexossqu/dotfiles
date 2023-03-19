@@ -1,0 +1,12 @@
+{
+  "server":"hkchianrsw1.msservicevip.pw",
+  "server_port":10773,
+  "local_address": "127.0.0.1",
+  "local_port":1080,
+  "password":"21797388",
+  "timeout":300,
+  "method":"aes-256-cfb",
+  "fast_open": false,
+  "workers": 1,
+  "prefer_ipv6": false
+}
