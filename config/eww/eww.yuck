@@ -134,9 +134,10 @@
   )
 )
 
+(defpoll music :interval "1s" "mpc status | tac | awk 'FNR==3'")
 (defwidget mpd []
   (module :class "mpd"
-          :text "我与春风皆过客，你携秋水揽星河"
+          :text "${music}"
 	  :icon "music"
 	  :height 30
 	  :spacing 3

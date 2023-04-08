@@ -1,0 +1,19 @@
+Apr 07 22:30 : mixer: Failed to read mixer for 'Master': no such mixer control: PCM
+Apr 08 10:22 : player: played "bb.mp3"
+Apr 08 10:26 : player: played "一千年以后_林俊杰.mp3"
+Apr 08 10:29 : player: played "07 刀剑如梦.mp3"
+Apr 08 10:35 : player: played "西海情歌.mp3"
+Apr 08 10:36 : alsa_output: Decoder is too slow; playing silence to avoid xrun
+Apr 08 10:45 : player: played "西海情歌.mp3"
+*** pw_stream_update_properties called from wrong context, check thread and locking: Operation not permitted
+*** pw_stream_update_properties called from wrong context, check thread and locking: Operation not permitted
+*** pw_stream_update_properties called from wrong context, check thread and locking: Operation not permitted
+Apr 08 10:50 : player: played "一千年以后_林俊杰.mp3"
+*** pw_stream_update_properties called from wrong context, check thread and locking: Operation not permitted
+Apr 08 10:53 : player: played "07 刀剑如梦.mp3"
+*** pw_stream_update_properties called from wrong context, check thread and locking: Operation not permitted
+Apr 08 11:00 : player: played "bb.mp3"
+*** pw_stream_update_properties called from wrong context, check thread and locking: Operation not permitted
+Apr 08 11:15 : player: played "西海情歌.mp3"
+Apr 08 13:32 : player: played "西海情歌.mp3"
+Apr 08 16:52 : player: played "西海情歌.mp3"

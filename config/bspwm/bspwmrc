@@ -18,3 +18,14 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+bspc rule -a Alacritty-float state=floating rectangle=1280x720+640+360
+bspc rule -a Pcmanfm state=floating rectangle=1200x800+680+100
+bspc rule -a ranger state=floating rectangle=1200x800+680+200
+bspc rule -a Electron  state=floating rectangle=1200x800+680+100
+bspc rule -a Wine  state=floating
+bspc rule -a QQ state=floating
+bspc rule -a Galculator state=floating
+bspc rule -a jetbrains-idea state=floating rectangle=2400x1350+80+45
+bspc rule -a qqmusic state=floating rectangle=1200x800+1300+100
+

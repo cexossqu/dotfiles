@@ -6,10 +6,23 @@
 super + Return
 	alacritty
 
+super + shift + Return
+	alacritty --class Alacritty-float
 # program launcher
 super + @space
-	rofi-4
+	rofi -show drun
 
+# screenshot
+super + p
+	flameshot gui	
+
+XF86AudioRaiseVolume
+	amixer sset Master 5%+ unmute	
+
+XF86AudioLowerVolume
+	amixer sset Master 5%- unmute
+XF86AudioMute
+	amixer sset Master toggle
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -17,6 +30,8 @@ super + Escape
 #
 # bspwm hotkeys
 #
+
+
 
 # quit/restart bspwm
 super + alt + {q,r}
