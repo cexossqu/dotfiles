@@ -3,7 +3,7 @@ audio_device_state:1:PipeWire Sound Server
 audio_device_state:1:Visualizer feed
 state: pause
 current: 3
-time: 236.980000
+time: 154.082000
 random: 1
 repeat: 0
 single: 0
@@ -17,5 +17,4 @@ playlist_begin
 2:一千年以后_林俊杰.mp3
 3:西海情歌.mp3
 4:bb.mp3
-5:05 追梦人.wav
 playlist_end

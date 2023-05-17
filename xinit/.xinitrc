@@ -20,9 +20,9 @@ if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
 fi
 
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
+# if [ -f "$usermodmap" ]; then
+    #xmodmap "$usermodmap"
+# fi
 
 # start some nice programs
 
@@ -34,13 +34,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 source ~/.config/.xenv
 # xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60
-xrandr --output DisplayPort-0 --mode 2560x1440 --rate 144
-picom -b --config ~/.config/picom/picom.conf
+xrandr --output DisplayPort-0 --mode 2560x1440 --rate 165
+# sh ~/.config/script/eww-launch.sh
+picom -b --experimental-backends --config ~/.config/picom/picom.conf
 xsetroot -cursor_name left_ptr
 sh ~/.config/script/bspwm-random-wallpapers.sh &
 
-sh ~/.config/script/eww-launch.sh
 
 fcitx5 &
-
 exec bspwm
