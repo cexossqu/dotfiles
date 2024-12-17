@@ -14,28 +14,25 @@
     niri.url = "github:sodiboo/niri-flake";
     stylix.url = "github:danth/stylix";
     hyprland.url = "github:hyprwm/Hyprland";
-    utils.url = "path:./utils";
+    # utils.url = "path:./utils";
   };
-  outputs = inputs@{ nixpkgs, home-manager, hyprland, nur, niri, stylix, nixos-hardware, utils,  ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, hyprland, nur, niri, stylix, nixos-hardware,  ... }: {
     nixosConfigurations = {
-      "chaos" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        # pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        pkgs = import nixpkgs (import ./config/pkgs-config.nix { overlays = [ niri.overlays.niri ];});
-        specialArgs = {inherit inputs;};
-        modules = let
-             utils = import ./utils/load-modules.nix;
-             tool = import ./utils/tool.nix;
+      "chaos" = nixpkgs.lib.nixosSystem (let
+          utils = import ./utils/load-modules.nix;
+          tool = import ./utils/tool.nix;
             # 使用加载模块功能
-            allModules = utils.loadRecursiveModules ./modules;
-            nonUserModules = tool.filterNonUserNix allModules;
-            hostModules = tool.filterNonUserNix (utils.loadRecursiveModules ./host);
-          # hmModules =  tool.filterUserNix allModules;
-            nixosModules = nonUserModules ++ hostModules;
-        in
-          # (builtins.map (str: builtins.toPath str) nixosModules) ++ 
-        nixosModules;
-         
+          allModules = utils.loadRecursiveModules ./modules;
+          nonUserModules = tool.filterNonUserNix allModules;
+          hostModules = tool.filterNonUserNix (utils.loadRecursiveModules ./host);
+          hmModules =  tool.filterUserNix allModules;
+          nixosModules = nonUserModules ++ hostModules;
+        in {
+        system = "x86_64-linux";
+        pkgs = import nixpkgs (import ./config/pkgs-config.nix { overlays = [ niri.overlays.niri ];});
+        specialArgs = {inherit inputs hmModules;};
+        modules = nixosModules;
+        )
       };
     };
   };
