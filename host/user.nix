@@ -29,9 +29,6 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    users.somnium = ({hmModules, ...}: let
-    in {
-      imports = hmModules;
-    });
+    users.somnium = ({hmModules, ...}: { imports = hmModules;});
   };  
 }
