@@ -19,7 +19,6 @@ let
   red = "#ff5555";
   yellow = "#f1fa8c";
 in
-with config.home-manager.users.somnium;
 {
   programs.qutebrowser = {
     enable = true;

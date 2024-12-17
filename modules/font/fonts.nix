@@ -47,5 +47,4 @@
     };
   };
 
-  home-manager.users.somnium.fonts.fontconfig.enable = true;
 }

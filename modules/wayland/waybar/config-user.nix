@@ -143,6 +143,7 @@ in
        };
      };
    };
+  };
   stylix.targets.waybar.enable = false;
   programs.waybar.style = let
         colors = config.lib.stylix.colors;
