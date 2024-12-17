@@ -26,15 +26,14 @@
              utils = import ./utils/load-modules.nix;
              tool = import ./utils/tool.nix;
             # 使用加载模块功能
-  #             libModules = utils.loadRecursiveModules ./lib;
             allModules = utils.loadRecursiveModules ./modules;
             nonUserModules = tool.filterNonUserNix allModules;
             hostModules = tool.filterNonUserNix (utils.loadRecursiveModules ./host);
             hmModules =  tool.filterUserNix allModules;
             nixosModules = nonUserModules ++ hostModules;
         in
-        (builtins.map (str: builtins.toPath str) nixosModules) ++ 
-        
+          # (builtins.map (str: builtins.toPath str) nixosModules) ++ 
+         
         (home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

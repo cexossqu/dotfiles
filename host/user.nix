@@ -1,10 +1,12 @@
 { config, options, lib, pkgs, modulesPath, inputs, ... }: 
 
 let
-
+  homeManager = inputs.home-manager.nixosModules.home-manager;
 in
-
 {
+
+    # 导入 Home Manager 模块
+  imports = [ homeManager ];
 
   users = {
     users.somnium = {
@@ -22,6 +24,19 @@ in
       };
     };
   };
-  
-  
+  # Home Manager 配置
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
+    users.somnium = ({config, options, lib, pkgs, ...}: let
+      utils = import ../utils/load-modules.nix;
+      tool = import ../utils/tool.nix;
+      # 使用加载模块功能
+      allModules = utils.loadRecursiveModules ../modules;
+      hmModules =  tool.filterUserNix allModules;
+    in {
+      imports = hmModules;
+    });
+  };  
 }
