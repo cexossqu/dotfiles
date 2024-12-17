@@ -142,7 +142,6 @@ in
          };
        };
      };
-   };
   };
   stylix.targets.waybar.enable = false;
   programs.waybar.style = let
