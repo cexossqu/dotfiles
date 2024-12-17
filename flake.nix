@@ -28,9 +28,10 @@
             # 使用加载模块功能
   #             libModules = utils.loadRecursiveModules ./lib;
             allModules = utils.loadRecursiveModules ./modules;
-            nixosModules = tool.filterNonUserNix allModules;
+            nonUserModules = tool.filterNonUserNix allModules;
             hostModules = tool.filterNonUserNix (utils.loadRecursiveModules ./host);
             hmModules =  tool.filterUserNix allModules;
+            nixosModules = nonUserModules ++ hostModules;
         in
         [
           home-manager.nixosModules.home-manager {
@@ -39,7 +40,7 @@
             home-manager.users.somnium = hmModules;
 	          home-manager.extraSpecialArgs = {inherit inputs;};
           }
-          ] ++ nioxsModules ++ hostModules ;
+          ] ++ (builtins.map (str: builtins.toPath str) nixosModules) ;
       };
     };
   };
