@@ -27,8 +27,8 @@
              tool = import ./utils/tool.nix;
             # 使用加载模块功能
   #             libModules = utils.loadRecursiveModules ./lib;
-            allModules = tool.filterNonUserNix utils.loadRecursiveModules ./modules;
-            hostModules = tool.filterNonUserNix utils.loadRecursiveModules ./host;
+            allModules = tool.filterNonUserNix (utils.loadRecursiveModules ./modules);
+            hostModules = tool.filterNonUserNix (utils.loadRecursiveModules ./host);
         in
         allModules ++ hostModules ;
       };
