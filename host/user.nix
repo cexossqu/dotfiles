@@ -5,7 +5,7 @@ let
   utils = import ../utils/load-modules.nix;
   tool = import ../utils/tool.nix;
   # 使用加载模块功能
-  allModules = utils.loadRecursiveModules ./modules
+  allModules = utils.loadRecursiveModules ./modules;
   hmModules =  tool.filterUserNix allModules;
 in
 
