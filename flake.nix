@@ -14,6 +14,7 @@
     niri.url = "github:sodiboo/niri-flake";
     stylix.url = "github:danth/stylix";
     hyprland.url = "github:hyprwm/Hyprland";
+    utils.url = "path:./utils";
   };
   outputs = inputs@{ nixpkgs, home-manager, hyprland, nur, niri, stylix, nixos-hardware, ... }: {
     nixosConfigurations = {
