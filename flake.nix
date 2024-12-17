@@ -33,14 +33,15 @@
             hmModules =  tool.filterUserNix allModules;
             nixosModules = nonUserModules ++ hostModules;
         in
-        [
-          home-manager.nixosModules.home-manager {
+        (builtins.map (str: builtins.toPath str) nixosModules) ++ 
+        
+        (home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.somnium = hmModules;
 	          home-manager.extraSpecialArgs = {inherit inputs;};
           }
-          ] ++ (builtins.map (str: builtins.toPath str) nixosModules) ;
+        );
       };
     };
   };
