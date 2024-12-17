@@ -1,4 +1,4 @@
-{ config, options, lib, pkgs, modulesPath, inputs, hmModules, ... }: 
+{ config, options, lib, pkgs, modulesPath, inputs, ... }: 
 
 let
   homeManager = inputs.home-manager.nixosModules.home-manager;
@@ -29,6 +29,6 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    users.somnium = hmModules;
+    users.somnium = ({hmModules, ...}: { imports = hmModules;});
   };  
 }

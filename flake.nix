@@ -32,8 +32,7 @@
         pkgs = import nixpkgs (import ./config/pkgs-config.nix { overlays = [ niri.overlays.niri ];});
         specialArgs = {inherit inputs hmModules;};
         modules = nixosModules;
-        )
-      };
+      };)
     };
   };
 }
