@@ -1,8 +1,8 @@
 { config, options, lib, pkgs, modulesPath, ... }: 
 
 {
-  programs.eww = {
-    enable = true;
-    configDir = ./config;
-  }; 
+  # programs.eww = {
+  #   enable = true;
+  #   configDir = ./config;
+  # }; 
 }
