@@ -27,10 +27,19 @@
              tool = import ./utils/tool.nix;
             # 使用加载模块功能
   #             libModules = utils.loadRecursiveModules ./lib;
-            allModules = tool.filterNonUserNix (utils.loadRecursiveModules ./modules);
+            allModules = utils.loadRecursiveModules ./modules;
+            nixosModules = tool.filterNonUserNix allModules;
             hostModules = tool.filterNonUserNix (utils.loadRecursiveModules ./host);
+            hmModules =  tool.filterUserNix allModules;
         in
-        allModules ++ hostModules ;
+        [
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.somnium = hmModules;
+	          home-manager.extraSpecialArgs = {inherit inputs;};
+          }
+          ] ++ nioxsModules ++ hostModules ;
       };
     };
   };

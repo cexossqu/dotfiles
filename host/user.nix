@@ -2,11 +2,6 @@
 
 let
 
-  utils = import ../utils/load-modules.nix;
-  tool = import ../utils/tool.nix;
-  # 使用加载模块功能
-  allModules = utils.loadRecursiveModules ./modules;
-  hmModules =  tool.filterUserNix allModules;
 in
 
 {
@@ -28,11 +23,5 @@ in
     };
   };
   
-  home-manager.nixosModules.home-manager {
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.users.somnium = hmModules;
-	  home-manager.extraSpecialArgs = {inherit inputs;};
-  }
   
 }
