@@ -16,7 +16,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     utils.url = "path:./utils";
   };
-  outputs = inputs@{ nixpkgs, home-manager, hyprland, nur, niri, stylix, nixos-hardware, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, hyprland, nur, niri, stylix, nixos-hardware, utils,  ... }: {
     nixosConfigurations = {
       "chaos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
