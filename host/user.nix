@@ -2,6 +2,7 @@
 
 let
   homeManager = inputs.home-manager.nixosModules.home-manager;
+  hmModulesPaths = hmModules;
 in
 {
 
@@ -28,8 +29,8 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs hmModulesPaths; };
     # users.somnium = ({hmModules, ...}: { imports = hmModules;});
-    users.somnium = hmModules;
+    users.somnium = ./hm-user.nix;
   };  
 }
