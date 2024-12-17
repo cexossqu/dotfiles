@@ -30,8 +30,8 @@ in
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
     users.somnium = ({config, options, lib, pkgs, ...}: let
-      utils = import ../utils/load-modules.nix;
-      tool = import ../utils/tool.nix;
+      utils = builtins.import ../utils/load-modules.nix;
+      tool = builtins.import ../utils/tool.nix;
       # 使用加载模块功能
       allModules = utils.loadRecursiveModules ../modules;
       hmModules =  tool.filterUserNix allModules;
