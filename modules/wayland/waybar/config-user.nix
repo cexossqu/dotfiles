@@ -1,4 +1,4 @@
-{ config, options, lib, pkgs, modulesPath, ... }: 
+{ config, pkgs, lib, ... }:
 
 let
   icons = rec {
@@ -29,7 +29,6 @@ let
   };
 in
 {
-
   programs  = {
    waybar = {
      enable = true;
@@ -142,7 +141,8 @@ in
          };
        };
      };
-  };
+   };
+ }; 
   stylix.targets.waybar.enable = false;
   programs.waybar.style = let
         colors = config.lib.stylix.colors;
@@ -211,5 +211,4 @@ in
             }
         }
       ''; 
- }; 
 }
