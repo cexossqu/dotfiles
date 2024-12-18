@@ -8,7 +8,7 @@
   ];
 
   programs.niri = {
-    enable = false;
+    enable = true;
     package = pkgs.niri-unstable;
     settings = {
       cursor = {
