@@ -21,7 +21,7 @@
     phinger-cursors
     rar
     wpsoffice-cn
-    onlyoffice-desktopeditors
+    # onlyoffice-desktopeditors
   ];
 
 }
