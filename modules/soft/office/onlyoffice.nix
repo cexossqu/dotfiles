@@ -4,7 +4,7 @@
 {
   # 启用onlyoffice
   services.onlyoffice = {
-    enable = true;
+    enable = false;
     hostname = "localhost";
     port = 8000;
   };
