@@ -1,7 +1,7 @@
 { config, options, lib, pkgs, ... }: 
 
 let
-  omz = toString ./oh-my-zsh;
+  omz = builtins.toString ./oh-my-zsh;
 in
 {
 
