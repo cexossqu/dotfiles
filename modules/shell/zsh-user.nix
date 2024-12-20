@@ -2,7 +2,7 @@
 
 let
   # omz = builtins.toString ./oh-my-zsh;
-  omz = "${HOME}/dotfiles/modules/shell/oh-my-zsh";
+  omz = "$HOME/dotfiles/modules/shell/oh-my-zsh";
 in
 {
 
