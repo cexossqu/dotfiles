@@ -28,7 +28,9 @@
           "/app/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice"
           "/app/onlyoffice/DocumentServer/db:/var/lib/postgresql"
         ];
-        extraOptions = "--restart always";  # 其他 Docker 选项
+        extraOptions = [
+          "--restart always"
+        ];  # 其他 Docker 选项
       };
     };
   };
