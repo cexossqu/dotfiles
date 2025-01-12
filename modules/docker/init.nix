@@ -23,6 +23,7 @@
         ];
         environment = {
           JWT_SECRET= "false";
+          JWT_HEADER= "AuthorizationJWT";
         };
         volumes = [
           "/app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice"
