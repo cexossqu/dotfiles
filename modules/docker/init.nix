@@ -15,12 +15,13 @@
     containers = {
       onlyoffice = {
        # ...
-        image = "onlyoffice/documentserver-ee";
+        image = "onlyoffice/documentserver";
+        autoStart = true;
         ports = [
-          "8000:8000"
+          "8000:80"
         ];
         environment = {
-          JWT_SECRET= "my_jwt_secret";
+          JWT_SECRET= "false";
         };
         volumes = [
           "/app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice"
