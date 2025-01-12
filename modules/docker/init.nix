@@ -19,11 +19,11 @@
         autoStart = true;
         pull = "always";
         ports = [
-          "8000:80"
+          "80:80"
         ];
         environment = {
           JWT_SECRET= "false";
-          JWT_HEADER= "AuthorizationJWT";
+          JWT_HEADER= "Authorization";
         };
         volumes = [
           "/app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice"
@@ -32,7 +32,7 @@
           "/app/onlyoffice/DocumentServer/db:/var/lib/postgresql"
         ];
         extraOptions = [
-          #   "--restart always"
+          "--network host"
         ];  # 其他 Docker 选项
       };
     };
