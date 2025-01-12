@@ -21,6 +21,9 @@
         ports = [
           "80:80"
         ];
+        networks = [
+          "host"
+        ];
         environment = {
           JWT_SECRET= "false";
           JWT_HEADER= "Authorization";
@@ -32,7 +35,7 @@
           "/app/onlyoffice/DocumentServer/db:/var/lib/postgresql"
         ];
         extraOptions = [
-          "--network host"
+          # "--network host"
         ];  # 其他 Docker 选项
       };
     };
