@@ -13,10 +13,11 @@
   virtualisation.oci-containers = {
     backend = "docker";
     containers = {
-      onlyoffice = {
+      office = {
        # ...
         image = "onlyoffice/documentserver";
         autoStart = true;
+        pull = "always";
         ports = [
           "8000:80"
         ];
