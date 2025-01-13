@@ -24,6 +24,10 @@
         networks = [
           "host"
         ];
+        
+        cmd = [
+          "supervisorctl start ds:example && sed 's,autostart=false,autostart=true,' -i /etc/supervisor/conf.d/ds-example.conf"
+        ];
         environment = {
           JWT_SECRET= "false";
           JWT_HEADER= "Authorization";
