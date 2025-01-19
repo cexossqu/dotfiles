@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
     pavucontrol
   ]; 
-  hardware.alsa.enable = true;
+  # hardware.alsa.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;

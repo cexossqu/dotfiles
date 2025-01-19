@@ -16,6 +16,8 @@
     # pkgs.st
     base16-schemes
     xwaylandvideobridge
+    labwc
+    xwayland-satellite
   ];
   services.xserver = {
     enable = true;
