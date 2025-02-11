@@ -18,6 +18,7 @@
     xwaylandvideobridge
     labwc
     xwayland-satellite
+    wlr-randr
   ];
   services.xserver = {
     enable = true;
