@@ -30,20 +30,4 @@ in
         };
       };
     };
-    systemd.user.services."wpaperd" = {
-      Unit = {
-        Description = "wallpapers! brought to you by stylix! :3";
-        PartOf = ["graphical-session.target"];
-        After = ["graphical-session.target"];
-        Requisite = ["graphical-session.target"];
-      };
-      Service = {
-        # ExecStart = "${pkgs.wpaperd}/bin/wpaperd -i ${config.stylix.image}";
-        ExecStart = "${pkgs.wpaperd}/bin/wpaperd";
-      # Restart = "on-failure";
-      };
-      Install = { 
-        WantedBy = [ "graphical-session.target" ]; 
-      };
-    };
 }
