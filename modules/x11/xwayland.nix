@@ -15,7 +15,7 @@
     swaybg
     # pkgs.st
     base16-schemes
-    xwaylandvideobridge
+    #xwaylandvideobridge
     labwc
     xwayland-satellite
     wlr-randr
