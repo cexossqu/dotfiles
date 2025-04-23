@@ -23,7 +23,7 @@
         vim.enable = false;
         qutebrowser.enable = true;
         #waybar.enable = false;
-        #wpaperd.enable = false;
+        wpaperd.enable = false;
         #alacritty.enable = false;
       };
       polarity = "dark";
