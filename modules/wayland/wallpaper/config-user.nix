@@ -40,7 +40,7 @@ in
       Service = {
         # ExecStart = "${pkgs.wpaperd}/bin/wpaperd -i ${config.stylix.image}";
         ExecStart = "${pkgs.wpaperd}/bin/wpaperd";
-        Restart = "on-failure";
+      # Restart = "on-failure";
       };
       Install = { 
         WantedBy = [ "graphical-session.target" ]; 
