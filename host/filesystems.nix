@@ -9,11 +9,11 @@
   ];
 
   # 连接dsm文件夹
-  fileSystems."/mnt/dsm-share" = {
-    device = "//192.168.32.210/data";
-    fsType = "cifs";
-    options = [ "username=somnium" "password=12138.Dsm" "vers=2.0" ];
-  };
+  # fileSystems."/mnt/dsm-share" = {
+  #   device = "//192.168.32.210/data";
+  #   fsType = "cifs";
+  #   options = [ "username=somnium" "password=12138.Dsm" "vers=2.0" ];
+  # };
 
   fileSystems."/" = { 
     # device = "/dev/disk/by-uuid/1419a8cf-6a14-4fc2-b8eb-c99011b38d98";
