@@ -3,7 +3,7 @@
 {
 
   imports = [
-    inputs.stylix.homeManagerModules.stylix
+    inputs.stylix.homeModules.stylix
   ];
     dconf.settings = {
       "org/gnome/calculator" = {
